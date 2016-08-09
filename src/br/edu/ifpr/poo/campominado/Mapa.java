@@ -3,7 +3,7 @@ package br.edu.ifpr.poo.campominado;
 public class Mapa {
 	
 	private int linhas, colunas;
-	Casa[][] campoMinado;
+	Casa[][] casas;
 
 	
 	public int getColunas() {
@@ -29,15 +29,15 @@ public class Mapa {
 	}
 	
 	private void inicializa(){
-		campoMinado = new Casa[linhas][colunas];
-		for(int i = 0; i < campoMinado.length; i++){
-			for(int j = 0; j < campoMinado.length; j++){
+		casas = new Casa[linhas][colunas];
+		for(int i = 0; i < casas.length; i++){
+			for(int j = 0; j < casas.length; j++){
 				if(i == j){
-					campoMinado[i][j] = new CasaEscondida(this, i, j,
+					casas[i][j] = new CasaEscondida(this, i, j,
 												CampoMinado.MINADO);
 				}
 				else{
-					campoMinado[i][j] = new CasaEscondida(this, i, j,
+					casas[i][j] = new CasaEscondida(this, i, j,
 												CampoMinado.SEM_MINA);
 				}
 			}
@@ -45,9 +45,9 @@ public class Mapa {
 	}
 	
 	public void desenha(){
-		for(int i = 0; i < campoMinado.length; i++){
-			for(int j = 0; j < campoMinado.length; j++){
-				System.out.print(campoMinado[i][j]);
+		for(int i = 0; i < casas.length; i++){
+			for(int j = 0; j < casas.length; j++){
+				System.out.print(casas[i][j]);
 			}
 			System.out.println("");
 		}
