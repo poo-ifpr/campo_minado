@@ -1,0 +1,20 @@
+REGRAS DO JOGO CAMPO MINADO
+
+- Mapa com N linhas e colunas
+- Minas são distribuídas aleatoriamente nas Casas do Mapa (Campo Minado)
+- Todas as Casas Iniciam Não Reveladas
+- Se o Usuário Clica numa Casa Não Revelada com Mina Então é Fim de Jogo
+	No Fim do Jogo, todas as Casas Não Reveladas São Reveladas
+- Se o Usuário Clica numa Casa Não Revelada sem Mina Então
+	- Obtém-se a Vizinhança da Casa
+		- Se Existem Minas na Vizinhança
+			- Casa é Revelada, Exibindo o Número de Minas na Vizinhança
+		- Senão
+			- Casa é Revelada e Deve-se Analisar a Vizinhança
+				- Revelando o Número de Minas na Vizinhança
+				- Verificando os Vizinhos dos Vizinhos
+				
+Fim de Jogo - Vitória:
+
+Quando Todas as Casas são Reveladas, com Exceção das que Contém Minas
+
