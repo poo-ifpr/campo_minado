@@ -7,7 +7,7 @@ public class CampoMinado {
 	public static boolean MINADO = true;
 	public static boolean SEM_MINA = false;
 	Mapa mapa;
-	int x, y;
+	Jogada jogada;
 	
 	public CampoMinado(){
 		mapa = new Mapa(10, 10);
@@ -21,9 +21,10 @@ public class CampoMinado {
 	private void jogada(){
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Digite a linha, depois a coluna (0 a 9)");
-		x = scanner.nextInt();
-		y = scanner.nextInt();
-		System.out.println("x=" + x + " y=" + y);
+		int x = scanner.nextInt();
+		int y = scanner.nextInt();
+		jogada = new Jogada(x, y);
+		System.out.println("x=" + jogada.getX() + " y=" + jogada.getY());
 		scanner.close();
 	}
 	
