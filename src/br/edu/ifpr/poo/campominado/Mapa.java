@@ -4,6 +4,7 @@ public class Mapa {
 	
 	private int linhas, colunas;
 	Casa[][] casas;
+	Casa[] minado;
 
 	
 	public Mapa(int linhas, int colunas){
@@ -13,6 +14,7 @@ public class Mapa {
 	public Mapa(int linhas, int colunas, EstrategiaMinas estrategia){
 		this.setLinhas(linhas);
 		this.setColunas(colunas);
+		this.setCasas(new Casa[getLinhas()][getColunas()]);
 		estrategia.geraMinas(this);
 	}
 
@@ -40,6 +42,14 @@ public class Mapa {
 		this.linhas = linhas;
 	}
 	
+
+	public Casa[] getMinado() {
+		return minado;
+	}
+
+	public void setMinado(Casa[] minado) {
+		this.minado = minado;
+	}
 
 	public void desenha(){
 		for(int i = 0; i < casas.length; i++){

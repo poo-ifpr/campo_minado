@@ -1,15 +1,20 @@
 package br.edu.ifpr.poo.campominado;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MinasDiagonal implements EstrategiaMinas {
 
 	@Override
 	public void geraMinas(Mapa mapa) {
-		Casa[][] casas = new Casa[mapa.getLinhas()][mapa.getColunas()];
+		List<Casa> minado = new ArrayList<Casa>();
+		Casa[][] casas = mapa.getCasas();
 		for(int i = 0; i < casas.length; i++){
 			for(int j = 0; j < casas.length; j++){
 				if(i == j){
 					casas[i][j] = new CasaEscondida(mapa, i, j,
 												CampoMinado.MINADO);
+					minado.add(casas[i][j]);
 				}
 				else{
 					casas[i][j] = new CasaEscondida(mapa, i, j,
@@ -18,6 +23,7 @@ public class MinasDiagonal implements EstrategiaMinas {
 			}
 		}
 		mapa.setCasas(casas);
+		mapa.setMinado();
 	}
 
 }

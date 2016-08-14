@@ -15,10 +15,10 @@ public class CampoMinado {
 	
 	public void jogar(){
 		desenhaCampoMinado();
-		jogada();
+		Jogada jogada = criarJogada();
 	}
 	
-	private void jogada(){
+	private Jogada criarJogada(){
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Digite a linha, depois a coluna (0 a 9)");
 		int x = scanner.nextInt();
@@ -26,6 +26,7 @@ public class CampoMinado {
 		jogada = new Jogada(x, y);
 		System.out.println("x=" + jogada.getX() + " y=" + jogada.getY());
 		scanner.close();
+		return jogada;
 	}
 	
 	
