@@ -23,7 +23,7 @@ public class MinasDiagonal implements EstrategiaMinas {
 			}
 		}
 		mapa.setCasas(casas);
-		mapa.setMinado();
+		mapa.setMinado(minado);
 	}
 
 }

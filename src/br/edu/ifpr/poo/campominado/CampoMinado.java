@@ -10,7 +10,11 @@ public class CampoMinado {
 	Jogada jogada;
 	
 	public CampoMinado(){
-		mapa = new Mapa(10, 10);
+		this(10);
+	}
+	
+	public CampoMinado(int tamanho){
+		mapa = new Mapa(tamanho);
 	}
 	
 	public void jogar(){
