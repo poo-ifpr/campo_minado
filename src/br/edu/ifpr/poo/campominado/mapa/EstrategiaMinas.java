@@ -1,4 +1,4 @@
-package br.edu.ifpr.poo.campominado;
+package br.edu.ifpr.poo.campominado.mapa;
 
 public interface EstrategiaMinas {
 

@@ -1,4 +1,7 @@
-package br.edu.ifpr.poo.campominado;
+package br.edu.ifpr.poo.campominado.mapa.casa;
+
+import br.edu.ifpr.poo.campominado.EstadoJogo;
+import br.edu.ifpr.poo.campominado.mapa.Mapa;
 
 public abstract class Casa {
 
@@ -6,6 +9,14 @@ public abstract class Casa {
 	private int x, y;
 	Mapa mapa;
 	
+	
+	public Casa(Mapa mapa, int x, int y,
+			TipoCasa tipoCasa) {
+		this.setMapa(mapa);
+		this.setX(x);
+		this.setY(y);
+		this.setMinado(tipoCasa == TipoCasa.MINADO);
+	}
 	
 	public Mapa getMapa() {
 		return mapa;
@@ -33,8 +44,8 @@ public abstract class Casa {
 
 	public abstract String toString();
 
-
-
+	public abstract boolean isEscondida();
+	
 	public boolean isMinado() {
 		return minado;
 	}
@@ -56,4 +67,6 @@ public abstract class Casa {
 	public void setX(int x) {
 		this.x = x;
 	}
+
+	public abstract EstadoJogo jogar();
 }
