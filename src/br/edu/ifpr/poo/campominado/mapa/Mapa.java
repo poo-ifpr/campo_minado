@@ -31,7 +31,7 @@ public class Mapa {
 		numCasasReveladas = 0;
 		totalParaVitoria = (tamanho*tamanho) - minado.size();
 	}
-	
+
 
 	
 	private Casa getCasa(Jogada jogada){
@@ -112,6 +112,7 @@ public class Mapa {
 		for(int i = -1; i <= 1; i++){
 			for(int j = - 1; j <= 1; j++){
 				if((i == 0 && j == 0) || (x + i) < 0 || (x + i) >= tamanho ||
+
 						(y + j) < 0 || (y + j) >= tamanho)
 					continue;
 				Casa vizinho = getCasa(x + i, y + j);
@@ -159,6 +160,7 @@ public class Mapa {
 		if(numCasasReveladas >= totalParaVitoria){
 			return EstadoJogo.VITORIA;
 		}
+
 		if(vizinhosMinados.size() == 0){
 			for(CasaEscondida vizinhoEscondido : getVizinhosEscondidosVazios(x, y)){
 				if(getVizinhosMinados(vizinhoEscondido.getX(),
@@ -170,6 +172,7 @@ public class Mapa {
 				}
 			}
 		}
+
 
 		return EstadoJogo.JOGANDO;
 	}

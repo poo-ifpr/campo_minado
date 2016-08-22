@@ -31,6 +31,7 @@ public class CampoMinado {
 			jogada = criarJogada();
 			situacao = mapa.jogar(jogada);	
 		}while(situacao == EstadoJogo.JOGANDO);
+
 	}
 
 	private void imprimeSituacaoFinalJogo() {

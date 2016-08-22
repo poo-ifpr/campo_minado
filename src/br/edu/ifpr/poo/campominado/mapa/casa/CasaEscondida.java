@@ -15,6 +15,7 @@ public class CasaEscondida extends Casa {
 	@Override
 	public String toString() {
 		return "O";
+
 	}
 
 	@Override
