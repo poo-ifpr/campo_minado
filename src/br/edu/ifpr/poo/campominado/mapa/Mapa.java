@@ -161,15 +161,13 @@ public class Mapa {
 			return EstadoJogo.VITORIA;
 		}
 
-		if(vizinhosMinados.size() == 0){
-			for(CasaEscondida vizinhoEscondido : getVizinhosEscondidosVazios(x, y)){
-				if(getVizinhosMinados(vizinhoEscondido.getX(),
-						vizinhoEscondido.getY()).size() == 0){
-					EstadoJogo situacao = vizinhoEscondido.jogar();
-					if(situacao != EstadoJogo.JOGANDO){
-						return situacao;
-					}
+		if (vizinhosMinados.size() == 0) {
+			for (CasaEscondida vizinhoEscondido : getVizinhosEscondidosVazios(x, y)) {
+				EstadoJogo situacao = getCasa(vizinhoEscondido.getX(), vizinhoEscondido.getY()).jogar();
+				if (situacao != EstadoJogo.JOGANDO) {
+					return situacao;
 				}
+
 			}
 		}
 
